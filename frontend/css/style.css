@@ -1,0 +1,373 @@
+/* Custom styles for ArtisanAI platform */
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #eb8a3d;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #d67424;
+}
+
+/* Category buttons */
+.category-btn {
+    @apply px-6 py-2 rounded-full border-2 border-gray-300 text-gray-600 font-medium transition-all duration-300 hover:border-brand-400 hover:text-brand-600;
+}
+
+.category-btn.active {
+    @apply bg-brand-500 border-brand-500 text-white;
+}
+
+/* Product card styles */
+.product-card {
+    @apply bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-105;
+}
+
+.product-card .image-container {
+    @apply relative overflow-hidden;
+}
+
+.product-card .image-container::after {
+    content: '';
+    @apply absolute inset-0 bg-black opacity-0 transition-opacity duration-300;
+}
+
+.product-card:hover .image-container::after {
+    opacity: 0.1;
+}
+
+.product-card .overlay {
+    @apply absolute top-2 right-2 opacity-0 transition-opacity duration-300;
+}
+
+.product-card:hover .overlay {
+    opacity: 1;
+}
+
+/* Artisan card styles */
+.artisan-card {
+    @apply bg-white rounded-xl shadow-lg p-6 text-center transition-all duration-300 hover:shadow-xl hover:scale-105;
+}
+
+.artisan-card .avatar {
+    @apply w-20 h-20 rounded-full mx-auto mb-4 border-4 border-craft-200;
+}
+
+/* Modal styles */
+.modal {
+    @apply fixed inset-0 z-50 flex items-center justify-center p-4;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+}
+
+.modal-content {
+    @apply bg-white rounded-xl shadow-2xl max-w-md w-full max-h-screen overflow-y-auto;
+}
+
+/* Form styles */
+.form-group {
+    @apply mb-4;
+}
+
+.form-label {
+    @apply block text-sm font-medium text-gray-700 mb-2;
+}
+
+.form-input {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all duration-200;
+}
+
+.form-input:focus {
+    @apply outline-none;
+}
+
+.form-textarea {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-transparent resize-vertical min-h-[100px] transition-all duration-200;
+}
+
+.form-select {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-transparent bg-white transition-all duration-200;
+}
+
+/* Button styles */
+.btn-primary {
+    @apply bg-brand-500 hover:bg-brand-600 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 transform hover:scale-105;
+}
+
+.btn-secondary {
+    @apply bg-gray-100 hover:bg-gray-200 text-gray-700 px-6 py-3 rounded-lg font-medium transition-all duration-200;
+}
+
+.btn-outline {
+    @apply border-2 border-brand-500 text-brand-500 hover:bg-brand-500 hover:text-white px-6 py-3 rounded-lg font-medium transition-all duration-200;
+}
+
+.btn-success {
+    @apply bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200;
+}
+
+.btn-danger {
+    @apply bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200;
+}
+
+/* Badge styles */
+.badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+}
+
+.badge-success {
+    @apply bg-green-100 text-green-800;
+}
+
+.badge-warning {
+    @apply bg-yellow-100 text-yellow-800;
+}
+
+.badge-info {
+    @apply bg-blue-100 text-blue-800;
+}
+
+.badge-craft {
+    @apply bg-craft-100 text-craft-800;
+}
+
+/* Loading animations */
+.loading-pulse {
+    @apply animate-pulse bg-gray-200 rounded;
+}
+
+.loading-shimmer {
+    position: relative;
+    overflow: hidden;
+    background-color: #f7f7f7;
+}
+
+.loading-shimmer::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateX(-100%);
+    background-image: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0,
+        rgba(255, 255, 255, 0.2) 20%,
+        rgba(255, 255, 255, 0.5) 60%,
+        rgba(255, 255, 255, 0)
+    );
+    animation: shimmer 2s infinite;
+    content: '';
+}
+
+@keyframes shimmer {
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Custom file upload */
+.file-upload {
+    @apply relative border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-brand-400 transition-colors duration-200;
+}
+
+.file-upload.dragover {
+    @apply border-brand-500 bg-brand-50;
+}
+
+.file-upload input[type="file"] {
+    @apply absolute inset-0 w-full h-full opacity-0 cursor-pointer;
+}
+
+/* Voice recorder styles */
+.voice-recorder {
+    @apply flex items-center justify-center space-x-4 p-4 bg-gray-50 rounded-lg;
+}
+
+.recording {
+    @apply bg-red-50 border-red-200;
+}
+
+.record-button {
+    @apply w-12 h-12 rounded-full bg-red-500 hover:bg-red-600 text-white flex items-center justify-center transition-all duration-200;
+}
+
+.record-button.recording {
+    @apply animate-pulse;
+}
+
+/* Stars rating */
+.stars {
+    @apply flex items-center space-x-1;
+}
+
+.star {
+    @apply text-gray-300 text-lg cursor-pointer transition-colors duration-200;
+}
+
+.star.filled {
+    @apply text-yellow-400;
+}
+
+.star:hover {
+    @apply text-yellow-400;
+}
+
+/* Progress bar */
+.progress-bar {
+    @apply w-full bg-gray-200 rounded-full h-2;
+}
+
+.progress-fill {
+    @apply bg-brand-500 h-2 rounded-full transition-all duration-300;
+}
+
+/* Floating action button */
+.fab {
+    @apply fixed bottom-6 right-6 w-14 h-14 bg-brand-500 hover:bg-brand-600 text-white rounded-full shadow-lg flex items-center justify-center text-xl transition-all duration-300 hover:scale-110;
+}
+
+/* Notification styles */
+.notification {
+    @apply fixed top-20 right-4 max-w-sm bg-white border-l-4 shadow-lg rounded-lg p-4 z-50 transform transition-all duration-300;
+}
+
+.notification.success {
+    @apply border-green-500;
+}
+
+.notification.error {
+    @apply border-red-500;
+}
+
+.notification.warning {
+    @apply border-yellow-500;
+}
+
+.notification.info {
+    @apply border-blue-500;
+}
+
+/* Step indicator styles */
+.step-item {
+    @apply flex flex-col items-center text-sm;
+}
+
+.step-circle {
+    @apply w-10 h-10 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center font-semibold mb-2 transition-all duration-300;
+}
+
+.step-item.active .step-circle {
+    @apply bg-brand-500 text-white;
+}
+
+.step-label {
+    @apply text-gray-600 font-medium;
+}
+
+.step-item.active .step-label {
+    @apply text-brand-600;
+}
+
+.step-line {
+    @apply w-16 h-0.5 bg-gray-200 self-start mt-5;
+}
+
+.step-item.active + .step-line {
+    @apply bg-brand-500;
+}
+
+/* Upload area enhancements */
+.file-upload .upload-content {
+    @apply transition-all duration-300;
+}
+
+.file-upload:hover .upload-content {
+    @apply scale-105;
+}
+
+/* Line clamp utilities */
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Dashboard grid */
+.dashboard-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6;
+}
+
+.stat-card {
+    @apply bg-white rounded-xl shadow-lg p-6 border-l-4;
+}
+
+.stat-card.revenue {
+    @apply border-green-500;
+}
+
+.stat-card.products {
+    @apply border-blue-500;
+}
+
+.stat-card.views {
+    @apply border-purple-500;
+}
+
+.stat-card.rating {
+    @apply border-yellow-500;
+}
+
+/* Chart container */
+.chart-container {
+    @apply bg-white rounded-xl shadow-lg p-6;
+}
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+    .mobile-hidden {
+        display: none !important;
+    }
+    
+    .mobile-full {
+        width: 100% !important;
+    }
+    
+    .mobile-text-center {
+        text-align: center !important;
+    }
+    
+    .step-item {
+        @apply text-xs;
+    }
+    
+    .step-circle {
+        @apply w-8 h-8 text-sm;
+    }
+    
+    .step-line {
+        @apply w-8;
+    }
+}

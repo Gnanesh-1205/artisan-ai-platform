@@ -1,0 +1,18 @@
+{
+  "name": "artisan-ai-platform",
+  "version": "1.0.0",
+  "description": "AI-driven platform for local artisans to market their craft and expand digital reach",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "nodemon backend/server.js",
+    "frontend": "cd frontend && python -m http.server 3000",
+    "install-deps": "npm install && cd backend && npm install"
+  },
+  "keywords": ["ai", "artisans", "marketplace", "google-cloud", "gemini"],
+  "author": "Hackathon Team",
+  "license": "MIT",
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

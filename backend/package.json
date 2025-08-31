@@ -1,0 +1,27 @@
+{
+  "name": "artisan-backend",
+  "version": "1.0.0",
+  "description": "Backend API for AI-driven artisan platform",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^8.0.3",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "@google-ai/generativelanguage": "^2.5.0",
+    "@google-cloud/speech": "^6.0.0",
+    "@google-cloud/translate": "^8.0.0",
+    "sharp": "^0.33.0",
+    "helmet": "^7.1.0",
+    "express-rate-limit": "^7.1.5",
+    "validator": "^13.11.0",
+    "nodemon": "^3.0.2"
+  }
+}
